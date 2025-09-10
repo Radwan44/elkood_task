@@ -35,7 +35,7 @@ form.addEventListener("submit", (e) => {
   }
 
   if (!date.value) {
-    dateError.textContent = "اجعل تاريخ حجزك في المستقبل;
+    dateError.textContent = "اجعل تاريخ حجزك في المستقبل";
     isValid = false;
   } else {
     const today = new Date().toISOString().split("T")[0];
@@ -49,3 +49,4 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
   }
 });
+
