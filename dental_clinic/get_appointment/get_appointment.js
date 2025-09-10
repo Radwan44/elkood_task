@@ -14,34 +14,28 @@ const dateError = document.getElementById("date-error");
 form.addEventListener("submit", (e) => {
   let isValid = true;
 
-  nameError.textContent = "";
-  phoneError.textContent = "";
-  bloodError.textContent = "";
-  typeError.textContent = "";
-  dateError.textContent = "";
-
   if (!/^[A-Za-z\u0600-\u06FF\s]+$/.test(name.value.trim())) {
-    nameError.textContent = "الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط";
+    nameError.textContent = "مسموح بالأحرف العربية والانكليزية فقط";
     isValid = false;
   }
 
   if (!/^\d{10}$/.test(phone.value.trim())) {
-    phoneError.textContent = "رقم الهاتف يجب أن يحتوي على 10 أرقام فقط";
+    phoneError.textContent = "رقم الهاتف يجب أن يتضمن 10 أرقام فقط";
     isValid = false;
   }
 
-  if (blood.value === "") {
-    bloodError.textContent = "يجب اختيار زمرة الدم";
+  if (!blood.value) {
+    bloodError.textContent = "اختر زمرة الدم";
     isValid = false;
   }
 
-  if (type.value === "") {
-    typeError.textContent = "يجب اختيار نوع الحجز";
+  if (!type.value) {
+    typeError.textContent = "اختر نوع الحجز";
     isValid = false;
   }
 
   if (!date.value) {
-    dateError.textContent = "يجب اختيار تاريخ الحجز";
+    dateError.textContent = "اجعل تاريخ حجزك في المستقبل;
     isValid = false;
   } else {
     const today = new Date().toISOString().split("T")[0];
