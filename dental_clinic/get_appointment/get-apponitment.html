@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد</title>
+    <link rel="stylesheet" href="get_appointment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <form class="booking-form animate__animated animate__fadeInDown">
+        <h1>حجز موعد</h1>
+
+        <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" name="name" placeholder="ادخل اسمك" required>
+            <span class="error" id="name-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" name="phone" placeholder="ادخل رقم الهاتف" required>
+            <span class="error" id="phone-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="blood">زمرة الدم</label>
+            <select id="blood" name="blood" required>
+                <option value="">اختر زمرة الدم</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <span class="error id=" blood-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="type">نوع الحجز</label>
+            <select id="type" name="type" required>
+                <option value="" disabled selected>اختر نوع الحجز</option>
+                <option value="scheduled">مسبق</option>
+                <option value="walkin">مباشر</option>
+                <option value="emergency">حالة اسعافية</option>
+            </select>
+            <span class="error id=" type-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="date">تاريخ الحجز</label>
+            <input type="date" id="date" name="date" required>
+            <span class="error id=" date-error"></span>
+        </div>
+
+        <button type="submit">احجز الآن</button>
+    </form>
+
+
+    <script src="get_appointment.js"></script>
+</body>
+
+</html>

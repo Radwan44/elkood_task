@@ -1,0 +1,130 @@
+:root {
+  --primary-blue: #3fa7d6;
+  --accent-orange: #ff6b00;
+  --scheduled-green: #5fd9a6;
+  --dark-green: #28a745;
+  --emergency-red: #ff6b6b;
+  --dark-red: #b22222;
+  --walkin-dark-blue: #134d63;
+  --bg-gray: #f7f9fb;
+  --card-white: #ffffff;
+  --border-gray: #ccc;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: var(--bg-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  direction: rtl;
+}
+
+.booking-form {
+  background-color: var(--card-white);
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+}
+
+.booking-form h1 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--dark-green);
+  font-weight: bold;
+}
+
+.booking-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--card-white);
+}
+
+.booking-form input::placeholder {
+  text-align: right;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: var(--primary-blue);
+}
+
+.booking-form select option.scheduled {
+  background-color: var(--scheduled-green);
+  color: var(--dark-green);
+}
+
+.booking-form select option.walkin {
+  background-color: var(--primary-blue);
+  color: var(--walkin-dark-blue);
+}
+
+.booking-form select option.emergency {
+  background-color: var(--emergency-red);
+  color: var(--dark-red);
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-orange);
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.error.animate__animated.animate__bounceIn {
+  --animate-duration: 0.8s;
+  display: inline-block;
+}

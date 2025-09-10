@@ -1,0 +1,240 @@
+:root {
+  --primary-blue: #3fa7d6;
+  --accent-orange: #e67e22;
+  --scheduled-green: #5fd9a6;
+  --scheduled-dark: #207a52;
+  --emergency-red: #ff6b6b;
+  --emergency-dark: #b22222;
+  --walkin-blue: #3fa7d6;
+  --walkin-dark: #134d63;
+  --text-dark: #333;
+  --text-gray: #777;
+  --bg-light: #f7f9fb;
+  --border-light: #e6e6e6;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.12);
+  --modal-backdrop: rgba(0, 0, 0, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding: 20px;
+  direction: rtl;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--primary-blue);
+  font-size: 2rem;
+}
+
+/* current patient */
+.current-patient {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.current-patient .status-title h2 {
+  font-size: 1.3rem;
+  color: var(--accent-orange);
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 5px;
+}
+
+.current-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-light);
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  color: var(--text-gray);
+  min-height: 80px;
+}
+
+.appointments {
+  display: flex;
+  gap: 20px;
+}
+
+/* Status */
+.status {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.status-title h2 {
+  font-size: 1.2rem;
+  color: var(--scheduled-green);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 5px;
+}
+
+/* Appointment Card */
+.appointment {
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 15px 15px 15px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px var(--shadow-light);
+  cursor: pointer;
+  transition: transform 1s ease;
+}
+
+.appointment:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--shadow-medium);
+}
+
+.patient-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appointmentType {
+  color: white;
+  border-radius: 12px;
+  padding: 10px 15px;
+  text-align: center;
+  min-width: 93px;
+}
+
+.appointment-scheduled {
+  background-color: var(--scheduled-green);
+  color: var(--scheduled-dark);
+}
+
+.appointment-emergency {
+  background-color: var(--emergency-red);
+  color: var(--emergency-dark);
+}
+
+.appointment-walkin {
+  background-color: var(--walkin-blue);
+  color: var(--walkin-dark);
+}
+
+@media (max-width: 500px) {
+  .appointments {
+    flex-direction: column-reverse;
+  }
+}
+
+/* big card */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--modal-backdrop);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 92%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 20px 40px var(--shadow-heavy);
+  transform: translateY(8px);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* content */
+.modal-name {
+  margin-bottom: 10px;
+  color: var(--walkin-dark);
+  font-size: 1.25rem;
+}
+
+.modal-details p {
+  margin: 8px 0;
+  color: var(--text-dark);
+}
+
+.modal-details a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.patient-modal__delete {
+  display: block;
+  width: 100%;
+  margin: 0 0 14px 0;
+  padding: 10px 12px;
+  font-size: 0.97rem;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: var(--emergency-red);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(255, 107, 107, 0.14);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  user-select: none;
+}
+
+.patient-modal__delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 107, 107, 0.16);
+}
+
+.patient-modal__delete:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* when modal open , prevent page scroll */
+body.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title> واجهة الحجوزات </title>
+</head>
+
+<body>
+    <main id="">
+        <h1 class="animate__animated animate__fadeInDown"> واجهة الحجوزات </h1>
+
+        <div class="current-patient animate__animated animate__fadeInUp">
+            <div class="status-title">
+                <h2>المريض الحالي</h2>
+            </div>
+            <div id="current-Box" class="current-box drop-zone">
+                <p id="emptyFiled">لا يوجد مريض حالي</p>
+            </div>
+        </div>
+
+        <div class="appointments animate__animated animate__fadeInUp">
+            <div class="status drop-zone" id="upcomingPatients">
+                <div class="status-title">
+                    <h2>المرضى القادمون</h2>
+                </div>
+            </div>
+            <div class="status drop-zone" id="waitingPatients">
+                <div class="status-title">
+                    <h2>المرضى في الانتظار</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- big card -->
+    <div id="patientModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card">
+            <button class="modal-close">✕</button>
+            <h2 id="modalTitle" class="modal-name">اسم المريض</h2>
+            <div class="modal-details">
+                <p><strong>زمرة الدم:</strong> <span id="modalBlood"></span></p>
+                <p><strong>تاريخ الحجز:</strong> <span id="modalDate"></span></p>
+                <p><strong>نوع الحجز:</strong> <span id="modalType"></span></p>
+                <p><strong>الهاتف:</strong> <a href="#" id="modalPhone"></a></p>
+            </div>
+            <button id="deletePatient" class="patient-modal__delete">🗑 حذف المريض</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

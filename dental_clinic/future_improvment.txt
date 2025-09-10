@@ -1,0 +1,5 @@
+future improvement:
+
+- Code to make emergency cases appear at the front of the queue
+
+- Migrate the database to Firestore
